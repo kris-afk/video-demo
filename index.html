@@ -44,15 +44,15 @@
 <body style="margin : 0px; overflow: hidden;">
     <a-scene embedded artoolkit='sourceType: webcam; detectionMode: mono; maxDetectionRate: 60; canvasWidth: 200; canvasHeight: 200'>
         <a-assets>
-            <video preload="auto" id="vid" poster="ANY IMAGE PATH (THUMBNAIL)" response-type="arraybuffer" loop="false" crossorigin webkit-playsinline playsinline controls>
-                <source  src="VIDEO PATH">
-                <img src="ANY IMAGE PATH (THUMBNAIL)"> Your browser does not support Or Else Please Click Reset Button.
+            <video preload="auto" id="my-vid" response-type="arraybuffer" loop="false" crossorigin webkit-playsinline playsinline controls>
+                <source  src="./assets/my-vid.mp4">
             </video>
         </a-assets>
-        <a-marker id="memarker" type="pattern" url="MARKER PATH (Eg:HIRO)" vidhandler>
-            <a-plane position='0 0.1 0' rotation="-90 0 0" material='transparent:true;src:#vid' controls></a-plane>
-        </a-marker>
-        <a-entity camera></a-entity>
+
+        <a-plane position="-2 0 -5" width="2" height="2" material='src: #my-vid' gps-entity-place="longitude: 10.03340; latitude: 53.56893;"></a-plane>
+
+        <a-camera gps-camera rotation-reader></a-camera>
+        
     </a-scene>
     <div class="footer">
         <div class="row">
