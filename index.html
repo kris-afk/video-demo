@@ -20,16 +20,19 @@
 		embedded
         arjs='sourceType: webcam; sourceWidth:1280; sourceHeight:960; displayWidth: 1280; displayHeight: 960; debugUIEnabled: false;'>
         
-        <a-assets>
-            <video id="video_1" src="./assets/my-vid.mp4"></video>
+        <a-assets
+        timeout="10000">
+            <video 
+            id="video_1" 
+            src="./assets/my-vid.mp4"
+            preload="auto"></video>
           </a-assets>
 
         <a-entity 
         geometry="primitive: sphere; radius: 15.5"
         light="type: point; color: white; intensity: 2"
         material="src:#video_1"
-        gps-entity-place="longitude: 10.03340; latitude: 53.56893"
-        video-controls="src:#video_1">
+        gps-entity-place="longitude: 10.03340; latitude: 53.56893">
         </a-entity>
 
         <a-camera gps-camera rotation-reader></a-camera>
